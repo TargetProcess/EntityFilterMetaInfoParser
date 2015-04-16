@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceMetadataDescriptionIndex IndexUri="http://localhost/targetprocess/api/v1/index/meta">
+  <ResourceMetadataDescription Name="Assignable" Uri="http://localhost/targetprocess/api/v1/Assignables/meta" Description="Base entity for User Story, Task, Bug, Test Plan Run, Feature, Request. It can be assigned to people and has workflow."/>
+  <ResourceMetadataDescription Name="Assignment" Uri="http://localhost/targetprocess/api/v1/Assignments/meta" Description="An assignment of the User Story, Task, Bug, etc. with a specific Role and user."/>
+  <ResourceMetadataDescription Name="Attachment" Uri="http://localhost/targetprocess/api/v1/Attachments/meta" Description="A file (image, archive, whatever) attached to Entity."/>
+  <ResourceMetadataDescription Name="Bug" Uri="http://localhost/targetprocess/api/v1/Bugs/meta" Description="Bug or defect (error, flaw, mistake, failure or fault in a computer program). Can relate to User Story. Can be assigned to Release and Iteration."/>
+  <ResourceMetadataDescription Name="Build" Uri="http://localhost/targetprocess/api/v1/Builds/meta" Description="Build in a project. Bugs and source code Revisions can be assigned to Build."/>
+  <ResourceMetadataDescription Name="Comment" Uri="http://localhost/targetprocess/api/v1/Comments/meta" Description="Can be added to almost any Entity."/>
+  <ResourceMetadataDescription Name="Company" Uri="http://localhost/targetprocess/api/v1/Companies/meta" Description="Used to limit Requests visibility in Help Desk. Requesters from Company A will not see Requests from Company B."/>
+  <ResourceMetadataDescription Name="Context" Uri="http://localhost/targetprocess/api/v1/Context/meta" Description="Context contains information about logged User, Culture, selected Projects and Processes."/>
+  <ResourceMetadataDescription Name="CustomActivity" Uri="http://localhost/targetprocess/api/v1/CustomActivities/meta" Description="Special type of work you can track Time against."/>
+  <ResourceMetadataDescription Name="CustomRule" Uri="http://localhost/targetprocess/api/v1/CustomRules/meta" Description="Custom business rules defined by user."/>
+  <ResourceMetadataDescription Name="EntityState" Uri="http://localhost/targetprocess/api/v1/EntityStates/meta" Description="State of Entity. Collection of EntityStates form Workflow for Entity. For example, Bug has four EntityStates by default: Open, Fixed, Invalid and Done."/>
+  <ResourceMetadataDescription Name="EntityType" Uri="http://localhost/targetprocess/api/v1/EntityTypes/meta" Description="Type of Entity. For example: Bug, TestCase, Project."/>
+  <ResourceMetadataDescription Name="Epic" Uri="http://localhost/targetprocess/api/v1/Epics/meta" Description="A high-level scope of work which contains Features. Can be assigned to Release. Can't be assigned to Iteration."/>
+  <ResourceMetadataDescription Name="Feature" Uri="http://localhost/targetprocess/api/v1/Features/meta" Description="A high-level requirement which contains user stories. Can be assigned to Release. Can't be assigned to Iteration."/>
+  <ResourceMetadataDescription Name="General" Uri="http://localhost/targetprocess/api/v1/Generals/meta" Description="Base entity for Assignable, Build, Impediment, Iteration, Program, Project, Release, Test Case, Test Plan, Bug, Feature, Request, Task, Test Plan Run, User Story."/>
+  <ResourceMetadataDescription Name="GeneralFollower" Uri="http://localhost/targetprocess/api/v1/GeneralFollowers/meta" Description="Relation between user and following entity."/>
+  <ResourceMetadataDescription Name="GeneralUser" Uri="http://localhost/targetprocess/api/v1/GeneralUsers/meta" Description="Base entity for User and Requester."/>
+  <ResourceMetadataDescription Name="GlobalSettings" Uri="http://localhost/targetprocess/api/v1/GlobalSettings/meta" Description="Global Application Settings."/>
+  <ResourceMetadataDescription Name="Impediment" Uri="http://localhost/targetprocess/api/v1/Impediments/meta" Description="Anything that prevents a team member from working as efficiently as possible. Impediment can relate to Task, User Story, Bug or Feature."/>
+  <ResourceMetadataDescription Name="Iteration" Uri="http://localhost/targetprocess/api/v1/Iterations/meta" Description="A single iteration results in an increment(s) of product functionality. Iteration should relate to a Release."/>
+  <ResourceMetadataDescription Name="Message" Uri="http://localhost/targetprocess/api/v1/Messages/meta" Description="Email message from email integration"/>
+  <ResourceMetadataDescription Name="MessageUid" Uri="http://localhost/targetprocess/api/v1/MessageUids/meta" Description="Represents reference to downloaded message"/>
+  <ResourceMetadataDescription Name="Milestone" Uri="http://localhost/targetprocess/api/v1/Milestones/meta" Description="Milestones for projects"/>
+  <ResourceMetadataDescription Name="Priority" Uri="http://localhost/targetprocess/api/v1/Priorities/meta" Description="Priority of User Story, Bug or Feature. Examples: Must Have, Nice to Have."/>
+  <ResourceMetadataDescription Name="Process" Uri="http://localhost/targetprocess/api/v1/Processes/meta" Description="Set of practices, terms, workflows and custom fields that can be applied to Project."/>
+  <ResourceMetadataDescription Name="Program" Uri="http://localhost/targetprocess/api/v1/Programs/meta" Description="Several Projects can be grouped into a Program."/>
+  <ResourceMetadataDescription Name="Project" Uri="http://localhost/targetprocess/api/v1/Projects/meta" Description="Core entity which contains Releases, Features, User Stories, Bugs, etc."/>
+  <ResourceMetadataDescription Name="ProjectMember" Uri="http://localhost/targetprocess/api/v1/ProjectMembers/meta" Description="Any User that is a part of a Project Team."/>
+  <ResourceMetadataDescription Name="Relation" Uri="http://localhost/targetprocess/api/v1/Relations/meta" Description="Relation between two Entities."/>
+  <ResourceMetadataDescription Name="RelationType" Uri="http://localhost/targetprocess/api/v1/RelationTypes/meta" Description="Type of relation between Entities."/>
+  <ResourceMetadataDescription Name="Release" Uri="http://localhost/targetprocess/api/v1/Releases/meta" Description="Delivering an increment(s) of product functionality to public. Release contains several Iterations."/>
+  <ResourceMetadataDescription Name="Request" Uri="http://localhost/targetprocess/api/v1/Requests/meta" Description="Request can represent Idea, Issue or Question from users. Bugs, User Stories and Features can be linked to Requests."/>
+  <ResourceMetadataDescription Name="Requester" Uri="http://localhost/targetprocess/api/v1/Requesters/meta" Description="Represents a requester."/>
+  <ResourceMetadataDescription Name="RequestType" Uri="http://localhost/targetprocess/api/v1/RequestTypes/meta" Description="Type of request (Idea, Issue or Question)."/>
+  <ResourceMetadataDescription Name="Revision" Uri="http://localhost/targetprocess/api/v1/Revisions/meta" Description="A single commit into repository. Contains a set of source files."/>
+  <ResourceMetadataDescription Name="RevisionFile" Uri="http://localhost/targetprocess/api/v1/RevisionFiles/meta" Description="A source file included to Revision."/>
+  <ResourceMetadataDescription Name="Role" Uri="http://localhost/targetprocess/api/v1/Roles/meta" Description="Defines permissions for User."/>
+  <ResourceMetadataDescription Name="RoleEffort" Uri="http://localhost/targetprocess/api/v1/RoleEfforts/meta" Description="Effort for Assignable by Role. For example, User Story can have 5 hours of Developer effort + 3 hours of Tester effort. The total effort will be 8 hours."/>
+  <ResourceMetadataDescription Name="Severity" Uri="http://localhost/targetprocess/api/v1/Severities/meta" Description="Severity (badness) of Bug. For example, Blocking, Critical, Small."/>
+  <ResourceMetadataDescription Name="Tag" Uri="http://localhost/targetprocess/api/v1/Tags/meta" Description="Tags that can be attached to entities."/>
+  <ResourceMetadataDescription Name="Task" Uri="http://localhost/targetprocess/api/v1/Tasks/meta" Description="A small chunk of work, typically less than 16 hours. Task must relate to User Story. It is not possible to create Tasks without User Story."/>
+  <ResourceMetadataDescription Name="Team" Uri="http://localhost/targetprocess/api/v1/Teams/meta" Description="Group of people working on some projects."/>
+  <ResourceMetadataDescription Name="TeamIteration" Uri="http://localhost/targetprocess/api/v1/TeamIterations/meta" Description="A single iteration results in an increment(s) of product functionality. Team iteration should relate to a Team."/>
+  <ResourceMetadataDescription Name="TeamMember" Uri="http://localhost/targetprocess/api/v1/TeamMembers/meta" Description="Any User that is a part of a Team."/>
+  <ResourceMetadataDescription Name="TeamProject" Uri="http://localhost/targetprocess/api/v1/TeamProjects/meta" Description="Any Project in which team participates."/>
+  <ResourceMetadataDescription Name="TeamState" Uri="http://localhost/targetprocess/api/v1/TeamStates/meta" Description="Relation between team and assignbale"/>
+  <ResourceMetadataDescription Name="Term" Uri="http://localhost/targetprocess/api/v1/Terms/meta" Description="Beta version: Term in Process. Like Bug, User Story, Feature, etc."/>
+  <ResourceMetadataDescription Name="TestCase" Uri="http://localhost/targetprocess/api/v1/TestCases/meta" Description="A set of steps to determine if a product functionality is working correctly. TestCase relates to User Story."/>
+  <ResourceMetadataDescription Name="TestCaseRun" Uri="http://localhost/targetprocess/api/v1/TestCaseRuns/meta" Description="A single Test Case Run. TestCase can be run many times. It is impossible to create a Test Case Run, instead Add Test Case to Test Plan to create a Test Case Run"/>
+  <ResourceMetadataDescription Name="TestPlan" Uri="http://localhost/targetprocess/api/v1/TestPlans/meta" Description="A group of TestCases. For example, you can create 'Smoke Tests' TestPlan and add TestCases there."/>
+  <ResourceMetadataDescription Name="TestPlanRun" Uri="http://localhost/targetprocess/api/v1/TestPlanRuns/meta" Description="A single TestPlan Run. TestPlan can have multiple runs by various Iterations, Releases or Builds."/>
+  <ResourceMetadataDescription Name="TestStep" Uri="http://localhost/targetprocess/api/v1/TestSteps/meta" Description="Single Step of Test Case"/>
+  <ResourceMetadataDescription Name="TestStepRun" Uri="http://localhost/targetprocess/api/v1/TestStepRuns/meta" Description="A single Test Step Run"/>
+  <ResourceMetadataDescription Name="Time" Uri="http://localhost/targetprocess/api/v1/Times/meta" Description="Spent/Remaining time for Assignable (Task, User Story, Bug, etc.)."/>
+  <ResourceMetadataDescription Name="User" Uri="http://localhost/targetprocess/api/v1/Users/meta" Description="Represents an user. User has Role and can be added to project teams."/>
+  <ResourceMetadataDescription Name="UserStory" Uri="http://localhost/targetprocess/api/v1/UserStories/meta" Description="A statement of end user requirements in a couple of sentences. User Story can be assigned to Iteration or Release."/>
+  <ResourceMetadataDescription Name="Workflow" Uri="http://localhost/targetprocess/api/v1/Workflows/meta" Description="Set of states"/>
+</ResourceMetadataDescriptionIndex>

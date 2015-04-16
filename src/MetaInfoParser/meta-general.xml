@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<list>
+<ResourceMetadataDescription Name="General" CanCreate="false" CanUpdate="true" CanDelete="true" IndexUri="http://localhost/targetprocess/api/v1/index/meta" Uri="http://localhost/targetprocess/api/v1/Generals" Description="Base entity for Assignable, Build, Impediment, Iteration, Program, Project, Release, Test Case, Test Plan, Bug, Feature, Request, Task, Test Plan Run, User Story.">
+  <ResourceMetadataHierarchyDescription>
+    <ResourceMetadataBaseResourceDescription>
+      <ResourceMetadataBaseResourceItemDescription/>
+    </ResourceMetadataBaseResourceDescription>
+    <ResourceMetadataDerivedResourceDescription>
+      <ResourceMetadataDerivedResourceItemDescription Name="Assignable" Uri="http://localhost/targetprocess/api/v1/Assignables/meta"/>
+      <ResourceMetadataDerivedResourceItemDescription Name="Project" Uri="http://localhost/targetprocess/api/v1/Projects/meta"/>
+      <ResourceMetadataDerivedResourceItemDescription Name="Program" Uri="http://localhost/targetprocess/api/v1/Programs/meta"/>
+      <ResourceMetadataDerivedResourceItemDescription Name="Release" Uri="http://localhost/targetprocess/api/v1/Releases/meta"/>
+      <ResourceMetadataDerivedResourceItemDescription Name="Iteration" Uri="http://localhost/targetprocess/api/v1/Iterations/meta"/>
+      <ResourceMetadataDerivedResourceItemDescription Name="TeamIteration" Uri="http://localhost/targetprocess/api/v1/TeamIterations/meta"/>
+      <ResourceMetadataDerivedResourceItemDescription Name="Team" Uri="http://localhost/targetprocess/api/v1/Teams/meta"/>
+      <ResourceMetadataDerivedResourceItemDescription Name="TestCase" Uri="http://localhost/targetprocess/api/v1/TestCases/meta"/>
+      <ResourceMetadataDerivedResourceItemDescription Name="Build" Uri="http://localhost/targetprocess/api/v1/Builds/meta"/>
+      <ResourceMetadataDerivedResourceItemDescription Name="Impediment" Uri="http://localhost/targetprocess/api/v1/Impediments/meta"/>
+    </ResourceMetadataDerivedResourceDescription>
+  </ResourceMetadataHierarchyDescription>
+  <ResourceMetadataPropertiesDescription>
+    <ResourceMetadataPropertiesResourceValuesDescription>
+      <ResourceFieldMetadataDescription Name="Id" CanSet="true" CanGet="true" IsDeprecated="false" IsRequired="false" Type="Int32" IsTypeComplex="false" Description="Entity ID" Uri="http://localhost/targetprocess/api/v1/Int32/meta" IsBoundToParent="true"/>
+      <ResourceFieldMetadataDescription Name="Name" CanSet="true" CanGet="true" IsDeprecated="false" IsRequired="true" Type="String" IsTypeComplex="false" Description="Entity name or title" Uri="http://localhost/targetprocess/api/v1/String/meta" IsBoundToParent="true"/>
+      <ResourceFieldMetadataDescription Name="Description" CanSet="true" CanGet="true" IsDeprecated="false" IsRequired="false" Type="String" IsTypeComplex="false" Description="Entity description" Uri="http://localhost/targetprocess/api/v1/String/meta" IsBoundToParent="true"/>
+      <ResourceFieldMetadataDescription Name="StartDate" CanSet="true" CanGet="true" IsDeprecated="false" IsRequired="false" Type="DateTime" IsTypeComplex="false" Description="Start date for time-boxed entities such as Iteration, Project, Release" Uri="http://localhost/targetprocess/api/v1/DateTime/meta" IsBoundToParent="true"/>
+      <ResourceFieldMetadataDescription Name="EndDate" CanSet="true" CanGet="true" IsDeprecated="false" IsRequired="false" Type="DateTime" IsTypeComplex="false" Description="End date for time-boxed entities such as Iteration, Project, Release" Uri="http://localhost/targetprocess/api/v1/DateTime/meta" IsBoundToParent="true"/>
+      <ResourceFieldMetadataDescription Name="CreateDate" CanSet="false" CanGet="true" IsDeprecated="false" IsRequired="false" Type="DateTime" IsTypeComplex="false" Description="Entity creation date" Uri="http://localhost/targetprocess/api/v1/DateTime/meta" IsBoundToParent="true"/>
+      <ResourceFieldMetadataDescription Name="ModifyDate" CanSet="true" CanGet="true" IsDeprecated="false" IsRequired="false" Type="DateTime" IsTypeComplex="false" Description="Last time entity was modified" Uri="http://localhost/targetprocess/api/v1/DateTime/meta" IsBoundToParent="true"/>
+      <ResourceFieldMetadataDescription Name="LastCommentDate" CanSet="true" CanGet="true" IsDeprecated="false" IsRequired="false" Type="DateTime" IsTypeComplex="false" Description="Last comment date" Uri="http://localhost/targetprocess/api/v1/DateTime/meta" IsBoundToParent="true"/>
+      <ResourceFieldMetadataDescription Name="Tags" CanSet="true" CanGet="true" IsDeprecated="false" IsRequired="false" Type="String" IsTypeComplex="false" Description="Comma-separated list tags" Uri="http://localhost/targetprocess/api/v1/String/meta" IsBoundToParent="false"/>
+      <ResourceFieldMetadataDescription Name="NumericPriority" CanSet="true" CanGet="true" IsDeprecated="false" IsRequired="false" Type="Double" IsTypeComplex="false" Description="Calculated priority of entity" Uri="http://localhost/targetprocess/api/v1/Double/meta" IsBoundToParent="true"/>
+      <ResourceFieldMetadataDescription Name="IsNow" CanSet="false" CanGet="true" IsDeprecated="false" IsRequired="false" Type="Boolean" IsTypeComplex="false" Description="True if entity start date is in the past and end date is in the future" Uri="http://localhost/targetprocess/api/v1/Boolean/meta" IsBoundToParent="false"/>
+      <ResourceFieldMetadataDescription Name="IsNext" CanSet="false" CanGet="true" IsDeprecated="false" IsRequired="false" Type="Boolean" IsTypeComplex="false" Description="True if entity is not in the past and is not current" Uri="http://localhost/targetprocess/api/v1/Boolean/meta" IsBoundToParent="false"/>
+      <ResourceFieldMetadataDescription Name="IsPrevious" CanSet="false" CanGet="true" IsDeprecated="false" IsRequired="false" Type="Boolean" IsTypeComplex="false" Description="True if entity is in the past" Uri="http://localhost/targetprocess/api/v1/Boolean/meta" IsBoundToParent="false"/>
+    </ResourceMetadataPropertiesResourceValuesDescription>
+    <ResourceMetadataPropertiesResourceReferencesDescription>
+      <ResourceFieldMetadataDescription Name="EntityType" CanSet="false" CanGet="true" IsDeprecated="false" IsRequired="false" Type="EntityType" IsTypeComplex="true" Description="Type of entity e.g. Bug, Feature, Task, etc." Uri="http://localhost/targetprocess/api/v1/EntityTypes/meta" IsBoundToParent="false"/>
+      <ResourceFieldMetadataDescription Name="Owner" CanSet="true" CanGet="true" IsDeprecated="false" IsRequired="false" Type="GeneralUser" IsTypeComplex="true" Description="Person who owns entity" Uri="http://localhost/targetprocess/api/v1/GeneralUsers/meta" IsBoundToParent="false"/>
+      <ResourceFieldMetadataDescription Name="LastCommentedUser" CanSet="false" CanGet="true" IsDeprecated="false" IsRequired="false" Type="GeneralUser" IsTypeComplex="true" Description="Last commented user" Uri="http://localhost/targetprocess/api/v1/GeneralUsers/meta" IsBoundToParent="false"/>
+      <ResourceFieldMetadataDescription Name="Project" CanSet="true" CanGet="true" IsDeprecated="false" IsRequired="false" Type="Project" IsTypeComplex="true" Description="Project where this entity is found" Uri="http://localhost/targetprocess/api/v1/Projects/meta" IsBoundToParent="false"/>
+      <ResourceFieldMetadataDescription Name="LinkedTestPlan" CanSet="true" CanGet="true" IsDeprecated="false" IsRequired="false" Type="TestPlan" IsTypeComplex="true" Description="A linked test plan" Uri="http://localhost/targetprocess/api/v1/TestPlans/meta" IsBoundToParent="false"/>
+    </ResourceMetadataPropertiesResourceReferencesDescription>
+    <ResourceMetadataPropertiesResourceCollectionsDescription>
+      <ResourceCollecitonFieldMetadataDescription Name="CustomFields" CanSet="false" CanGet="true" IsDeprecated="false" IsRequired="false" Type="CustomFields" IsTypeComplex="true" Description="Custom fields values" Uri="http://localhost/targetprocess/api/v1/CustomFieldValues/meta" CanAdd="true" CanRemove="true" IsBoundToParent="true"/>
+      <ResourceCollecitonFieldMetadataDescription Name="Comments" CanSet="false" CanGet="true" IsDeprecated="false" IsRequired="false" Type="Comment" IsTypeComplex="true" Description="Collection of comments for entity" Uri="http://localhost/targetprocess/api/v1/Comments/meta" CanAdd="true" CanRemove="true" IsBoundToParent="true"/>
+      <ResourceCollecitonFieldMetadataDescription Name="Messages" CanSet="false" CanGet="true" IsDeprecated="false" IsRequired="false" Type="Message" IsTypeComplex="true" Description="Collection of messages for entity" Uri="http://localhost/targetprocess/api/v1/Messages/meta" CanAdd="false" CanRemove="false" IsBoundToParent="false"/>
+      <ResourceCollecitonFieldMetadataDescription Name="TagObjects" CanSet="false" CanGet="true" IsDeprecated="false" IsRequired="false" Type="Tag" IsTypeComplex="true" Description="Collection of tags for entity" Uri="http://localhost/targetprocess/api/v1/Tags/meta" CanAdd="true" CanRemove="true" IsBoundToParent="false"/>
+      <ResourceCollecitonFieldMetadataDescription Name="MasterRelations" CanSet="false" CanGet="true" IsDeprecated="false" IsRequired="false" Type="Relation" IsTypeComplex="true" Description="Collection of related Master entities" Uri="http://localhost/targetprocess/api/v1/Relations/meta" CanAdd="true" CanRemove="true" IsBoundToParent="true"/>
+      <ResourceCollecitonFieldMetadataDescription Name="SlaveRelations" CanSet="false" CanGet="true" IsDeprecated="false" IsRequired="false" Type="Relation" IsTypeComplex="true" Description="Collection of related Slave entities" Uri="http://localhost/targetprocess/api/v1/Relations/meta" CanAdd="true" CanRemove="true" IsBoundToParent="true"/>
+      <ResourceCollecitonFieldMetadataDescription Name="Followers" CanSet="false" CanGet="true" IsDeprecated="false" IsRequired="false" Type="GeneralFollower" IsTypeComplex="true" Description="Collection of followers" Uri="http://localhost/targetprocess/api/v1/GeneralFollowers/meta" CanAdd="true" CanRemove="true" IsBoundToParent="true"/>
+      <ResourceCollecitonFieldMetadataDescription Name="Attachments" CanSet="false" CanGet="true" IsDeprecated="false" IsRequired="false" Type="Attachment" IsTypeComplex="true" Description="Collection of attachments for entity" Uri="http://localhost/targetprocess/api/v1/Attachments/meta" CanAdd="false" CanRemove="false" IsBoundToParent="true"/>
+    </ResourceMetadataPropertiesResourceCollectionsDescription>
+  </ResourceMetadataPropertiesDescription>
+</ResourceMetadataDescription>
+<ResourceMetadataDescription Name="MessageUid" CanCreate="true" CanUpdate="true" CanDelete="true" IndexUri="http://localhost/targetprocess/api/v1/index/meta" Uri="http://localhost/targetprocess/api/v1/MessageUids" Description="Represents reference to downloaded message">
+  <ResourceMetadataHierarchyDescription>
+    <ResourceMetadataBaseResourceDescription>
+      <ResourceMetadataBaseResourceItemDescription/>
+    </ResourceMetadataBaseResourceDescription>
+    <ResourceMetadataDerivedResourceDescription>
+      <ResourceMetadataDerivedResourceItemDescription/>
+    </ResourceMetadataDerivedResourceDescription>
+  </ResourceMetadataHierarchyDescription>
+  <ResourceMetadataPropertiesDescription>
+    <ResourceMetadataPropertiesResourceValuesDescription>
+      <ResourceFieldMetadataDescription Name="Id" CanSet="true" CanGet="true" IsDeprecated="false" IsRequired="false" Type="Int32" IsTypeComplex="false" Description="Entity ID" Uri="http://localhost/targetprocess/api/v1/Int32/meta" IsBoundToParent="true"/>
+      <ResourceFieldMetadataDescription Name="Uid" CanSet="true" CanGet="true" IsDeprecated="false" IsRequired="false" Type="String" IsTypeComplex="false" Description="The identity of the message" Uri="http://localhost/targetprocess/api/v1/String/meta" IsBoundToParent="true"/>
+      <ResourceFieldMetadataDescription Name="MailServer" CanSet="true" CanGet="true" IsDeprecated="false" IsRequired="false" Type="String" IsTypeComplex="false" Description="Mail server name" Uri="http://localhost/targetprocess/api/v1/String/meta" IsBoundToParent="true"/>
+      <ResourceFieldMetadataDescription Name="MailLogin" CanSet="true" CanGet="true" IsDeprecated="false" IsRequired="false" Type="String" IsTypeComplex="false" Description="Mail login" Uri="http://localhost/targetprocess/api/v1/String/meta" IsBoundToParent="true"/>
+    </ResourceMetadataPropertiesResourceValuesDescription>
+  </ResourceMetadataPropertiesDescription>
+</ResourceMetadataDescription>
+</list>
