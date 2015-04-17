@@ -4,6 +4,7 @@ module Models =
     type Field = {
         Name: string
         Type: string
+        IsCollection : bool
     }
 
     type Entity = {
@@ -36,27 +37,35 @@ module DataSource =
     let META_API_ENDPOINT = "http://localhost/targetprocess/api/v1/Index/meta?format=xml"
 
     let getEntities () = 
+        let inline buildField isCollection (propertyInfo : ^a) = 
+            if (^a : (member IsDeprecated : bool) (propertyInfo))
+                then None
+                else Some {
+                    Name = (^a : (member Name : string) (propertyInfo))
+                    Type = (^a : (member Type : string) (propertyInfo))
+                    IsCollection = isCollection
+                }
+
         let buildFields entityMetaText = 
             let entityMeta = EntityMetaInfo.Parse entityMetaText
             let props = entityMeta.ResourceMetadataPropertiesDescription
             
-            let inline buildField (propertyInfo : ^a) = 
-                if (^a : (member IsDeprecated : bool) (propertyInfo)) 
-                    then None
-                    else Some {
-                        Name = (^a : (member Name : string) (propertyInfo))
-                        Type = (^a : (member Type : string) (propertyInfo))
-                    }
+            let inline choose getFields isCollection = 
+                Option.toList
+                >> Seq.collect getFields
+                >> Seq.choose (buildField isCollection)
 
             seq {
                 yield! 
-                    props.ResourceMetadataPropertiesResourceValuesDescription.ResourceFieldMetadataDescriptions
-                    |> Seq.choose buildField
+                    props.ResourceMetadataPropertiesResourceValuesDescription |> Some
+                    |> choose (fun x -> x.ResourceFieldMetadataDescriptions) false
+
                 yield! 
                     props.ResourceMetadataPropertiesResourceReferencesDescription
-                    |> Option.toList
-                    |> Seq.collect (fun x -> x.ResourceFieldMetadataDescriptions)
-                    |> Seq.choose buildField
+                    |> choose (fun x -> x.ResourceFieldMetadataDescriptions) false
+                yield!
+                    props.ResourceMetadataPropertiesResourceCollectionsDescription
+                    |> choose (fun x -> x.ResourceCollecitonFieldMetadataDescriptions) true
             } 
             |> Seq.sortBy (fun x -> x.Name)
             |> List.ofSeq
@@ -85,7 +94,7 @@ module Converter =
 
     let convert  = 
         let convertField (field : Field) = 
-            sprintf "{ \"name\": \"%s\", \"type\": \"%s\" }" field.Name field.Type
+            sprintf "{ \"name\": \"%s\", \"type\": \"%s\", \"isCollection\": %b }" field.Name field.Type field.IsCollection
 
         let convertSingle entity = 
             entity.Fields 
