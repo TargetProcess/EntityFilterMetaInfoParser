@@ -109,10 +109,14 @@ module Converter =
 
 module Output = 
     let wrapRequire = sprintf "define(function(require) {\r\n    return %s;\r\n});"
-    let addHeader = sprintf "// AUTO-GENERATED with https://github.com/TargetProcess/EntityFilterMetaInfoParser \r\n%s"
+    let addESLintFlags = sprintf "/*eslint quotes:0*/\r\n%s"
+    let addJSHintFlags = sprintf "/*jshint quotmark:false*/\r\n%s"
+    let addHeader = sprintf "// AUTO-GENERATED with https://github.com/TargetProcess/EntityFilterMetaInfoParser\r\n%s"
 
 DataSource.getEntities() 
 |> Converter.convert
 |> Output.wrapRequire
+|> Output.addESLintFlags
+|> Output.addJSHintFlags
 |> Output.addHeader
 |> printfn "%s"
